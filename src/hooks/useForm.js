@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 //los valores iniciales del formulario los va a recibir este hook personalizado como parametro:
-export const useForm = (initialForm) => {
+export const useForm = (initialForm, validateForm) => {
     //VARIBLES DE ESTADO QUE CONTROLAN EL FOMULARIO
     const [form, setForm] = useState(initialForm);
     //para el manejo de los errores usaremos otro state que inicializaremos con un objeto vacio (si esta vacio entonces todo se valido bien / si contiene algo pues entonces hay un error):
@@ -29,3 +29,5 @@ export const useForm = (initialForm) => {
         handleSubmit,
     };
 };
+
+//en el metodo handleBlur se van a desencadenar las validaciones por lo que al useForm le pasamos una funcion para validar validateForm (que va a recibir el hook personalizado con todas las validaciones del formulario)

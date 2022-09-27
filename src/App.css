@@ -1,0 +1,23 @@
+input[type="text"],
+[type="email"],
+[type="number"] {
+    border: thin solid #dedede;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    outline: none;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1;
+    background-color: transparent;
+}
+
+button[type="submit"],
+[type="reset"] {
+    border: thin solid rgb(41, 40, 40);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: aliceblue;
+}
