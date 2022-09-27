@@ -45,9 +45,7 @@ const ContactForm = () => {
     //desestructuramos el hook personalizado useForms.js
     const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationsForm);
     return (
-        <section className="container">
-            <h2>Formulario de contacto</h2>
-
+        <section className="container bg-light py-3 border">
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" placeholder="Nombre" onBlur={handleBlur} onChange={handleChange} value={form.name} required />
                 {errors.name && <p className="lead text-danger mt-0 fs-6 ms-3">{errors.name}</p>}
