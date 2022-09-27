@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 //los valores iniciales del formulario los va a recibir este hook personalizado como parametro:
+//en el metodo handleBlur se van a desencadenar las validaciones por lo que al useForm le pasamos una funcion para validar validateForm (que va a recibir el hook personalizado con todas las validaciones del formulario)
+
 export const useForm = (initialForm, validateForm) => {
     //VARIBLES DE ESTADO QUE CONTROLAN EL FOMULARIO
     const [form, setForm] = useState(initialForm);
@@ -13,9 +15,18 @@ export const useForm = (initialForm, validateForm) => {
     //para recibir la respuesta del envio creamos otro estado:
     const [response, setResponse] = useState(null);
 
-    //declaramos las variables que posteriormente en los elementos jsx del Formulario vamos a ejecutar en los eventos:
-    const handleChange = (e) => {};
-    const handleBlur = (e) => {};
+    //declaramos las funciones que posteriormente en los elementos jsx del Formulario vamos a ejecutar en los eventos:
+    const handleChange = (e) => {
+        //desestructuro el name y el value del objeto e.tarjet:
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value });
+    };
+    const handleBlur = (e) => {
+        //actualizar la variable del form
+        handleChange(e);
+        //actualiza la variable setError (se ejecuta la funcion de validacion y evalua c/u de las variables del formulario que corresponden a c/u de los inputs).
+        setErrors(validateForm(form));
+    };
     const handleSubmit = (e) => {};
 
     //vamos a retornar un objeto con las variables deestado
@@ -29,5 +40,3 @@ export const useForm = (initialForm, validateForm) => {
         handleSubmit,
     };
 };
-
-//en el metodo handleBlur se van a desencadenar las validaciones por lo que al useForm le pasamos una funcion para validar validateForm (que va a recibir el hook personalizado con todas las validaciones del formulario)
