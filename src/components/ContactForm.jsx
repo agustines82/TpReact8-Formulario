@@ -28,13 +28,11 @@ const validationsForm = (form) => {
     } else if (!regExNames.test(form.lastname.trim())) {
         errors.lastname = "El campo Apellido solo acepta letras. Se requiere un minimo de 2 caracteres a un maximo de 25";
     }
-
     if (!form.dni) {
         errors.dni = "El campo DNI es requerido.";
     } else if (!regExDni.test(form.dni.trim())) {
         errors.dni = "El campo DNI solo acepta numeros. Se requiere un minimo de 7 caracteres a un maximo de 8";
     }
-
     if (!form.email) {
         errors.email = "El campo Email es requerido.";
     } else if (!regExEmail.test(form.email.trim())) {
@@ -45,7 +43,7 @@ const validationsForm = (form) => {
 
 const ContactForm = () => {
     //desestructuramos el hook personalizado useForms.js
-    const { form, errors, loading, response, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationsForm);
+    const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationsForm);
     return (
         <section className="container">
             <h2>Formulario de contacto</h2>
