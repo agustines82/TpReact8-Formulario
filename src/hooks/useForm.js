@@ -44,7 +44,7 @@ export const useForm = (initialForm, validateForm) => {
         }
     };
 
-    //vamos a retornar un objeto con las variables deestado
+    //vamos a retornar un objeto con las variables de estado
     return {
         form,
         errors,
