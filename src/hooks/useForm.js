@@ -39,7 +39,6 @@ export const useForm = (initialForm, validateForm) => {
                 icon: "error",
                 title: "Oops...",
                 text: "Algo salio mal...! Intente nuevamente.",
-                footer: '<a href="#">Why do I have this issue?</a>',
             });
         }
     };
