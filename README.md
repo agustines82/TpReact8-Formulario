@@ -1,6 +1,6 @@
 # Trabajo Practico de React - Formulario
 
-Trabajo practico que consiste en crear una aplicación web que muestre un formulario y valide todos los campos del mismo
+Trabajo practico que consiste en crear una aplicación web que muestre un formulario de registro y valide todos los campos del mismo
 
 ## Trabajo practico
 
@@ -12,7 +12,12 @@ Para mayor informacion sobre los requerimientos del practico acceda al siguiente
 
 En caso de querer clonar el proyecto acceda al repositorio publico del mismo en GitHub:
 
-[Git](https://github.com/agustines82/TpReact8-formulario)
+[Git](https://github.com/agustines82/TpReact8-Formulario)
+
+## Netlify
+
+Puedes ver el proyecto online
+[Netlify]()
 
 ## autor
 
